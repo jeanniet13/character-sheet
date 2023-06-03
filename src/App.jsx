@@ -1,197 +1,84 @@
 import {
   Container,
+  Flex,
   Grid,
   NumberInput,
-  SimpleGrid,
   Space,
   Stack,
-  TextInput,
-  Title
+  Text,
 } from '@mantine/core';
 import './App.css'
+import CharacterInfo from './CharacterInfo';
+import Ability from './Ability.jsx';
+import HitPointInfo from './HitPointInfo.jsx';
+import PersonalityInfo from './PersonalityInfo.jsx';
+import SavingThrows from './SavingThrows';
 
 function App() {
   return (
     <>
       <Container>
+        <CharacterInfo/>
+        <Space h="xl"/>
         <Grid columns={9} align='left'>
-          <Grid.Col span={4}>
-            <Title order={1} align="right">Dungeons & Dragons</Title>
-            <Space h="md" />
-            <TextInput
-              inputWrapperOrder={["input", "label"]}
-              placeholder="Your name"
-              label="Character Name"
-              size="md"
-              styles={{ root: { textAlign: 'left' } }}
-            />
-          </Grid.Col>
-          <Grid.Col span={5}>
-            <SimpleGrid cols={3}>
-              <div>
-                <TextInput
-                  inputWrapperOrder={["input", "label"]}
-                  label="Class & Level"
-                  styles={{ root: { textAlign: 'left' } }}
-                />
-              </div>
-              <div>
-                <TextInput
-                  inputWrapperOrder={["input", "label"]}
-                  label="Background"
-                  styles={{ root: { textAlign: 'left' } }}
-                />
-              </div>
-              <div>
-                <TextInput
-                  inputWrapperOrder={["input", "label"]}
-                  label="Player Name"
-                  styles={{ root: { textAlign: 'left' } }}
-                />
-              </div>
-              <div>
-                <TextInput
-                  inputWrapperOrder={["input", "label"]}
-                  label="Race"
-                  styles={{ root: { textAlign: 'left' } }}
-                />
-              </div>
-              <div>
-                <TextInput
-                  inputWrapperOrder={["input", "label"]}
-                  label="Alignment"
-                  styles={{ root: { textAlign: 'left' } }}
-                />
-              </div>
-              <div>
-                <TextInput
-                  inputWrapperOrder={["input", "label"]}
-                  label="Experience Points"
-                  styles={{ root: { textAlign: 'left' } }}
-                />
-              </div>
-            </SimpleGrid>
-          </Grid.Col>
-        </Grid>
-        <Space h="xl" />
-        <Grid columns={9} align='left'>
-          <Grid.Col span={1}>
-            <Stack h={300}>
-              <div>
-                <NumberInput
-                  label="Strength"
-                  radius="xl"
-                  size="xl"
-                  hideControls
-                  styles={{
-                    label: { fontSize: '.9rem' },
-                  }}
-                />
-                <NumberInput
-                  radius="xl"
-                  size="s"
-                  hideControls
-                  styles={{
-                  }}
-                />
-              </div>
-              <div>
-                <NumberInput
-                  label="Dexterity"
-                  radius="xl"
-                  size="xl"
-                  hideControls
-                  styles={{
-                    label: { fontSize: '.9rem' },
-                  }}
-                />
-                <NumberInput
-                  radius="xl"
-                  size="s"
-                  hideControls
-                  styles={{
-                  }}
-                />
-              </div>
-              <div>
-                <NumberInput
-                  label="Constitution"
-                  radius="xl"
-                  size="xl"
-                  hideControls
-                  styles={{
-                    label: { fontSize: '.9rem' },
-                  }}
-                />
-                <NumberInput
-                  radius="xl"
-                  size="s"
-                  hideControls
-                  styles={{
-                  }}
-                />
-              </div>
-              <div>
-                <NumberInput
-                  label="Intelligence"
-                  radius="xl"
-                  size="xl"
-                  hideControls
-                  styles={{
-                    label: { fontSize: '.9rem' },
-                  }}
-                />
-                <NumberInput
-                  radius="xl"
-                  size="s"
-                  hideControls
-                  styles={{
-                  }}
-                />
-              </div>
-              <div>
-                <NumberInput
-                  label="Wisdom"
-                  radius="xl"
-                  size="xl"
-                  hideControls
-                  styles={{
-                    label: { fontSize: '.9rem' },
-                  }}
-                />
-                <NumberInput
-                  radius="xl"
-                  size="s"
-                  hideControls
-                  styles={{
-                  }}
-                />
-              </div>
-              <div>
-                <NumberInput
-                  label="Charisma"
-                  radius="xl"
-                  size="xl"
-                  hideControls
-                  styles={{
-                    label: { fontSize: '.9rem' },
-                  }}
-                />
-                <NumberInput
-                  radius="xl"
-                  size="s"
-                  hideControls
-                  styles={{
-                  }}
-                />
-              </div>
-            </Stack>
-          </Grid.Col>
-          <Grid.Col span={2}>
+          <Grid.Col span={3}>
+            <Grid columns={3}>
+              <Grid.Col span={1}>
+                <Stack bg="lightgray" p="5px">
+                  <Ability name="Strength"/>
+                  <Ability name="Dexterity"/>
+                  <Ability name="Constitution"/>
+                  <Ability name="Intelligence"/>
+                  <Ability name="Wisdom"/>
+                  <Ability name="Charisma"/>
+                </Stack>
+              </Grid.Col>
+              <Grid.Col span={2}>
+                <Flex
+                  gap="md"
+                  justify="flex-start"
+                  align="center"
+                  direction="row"
+                  wrap="nowrap"
+                >
+                  <NumberInput
+                    radius="xl"
+                    size="md"
+                    hideControls
+                    w="25%"
+                  />
+                  <Text fz="lg" align="center" w="75%">
+                    Inspiration
+                  </Text>
+                </Flex>
+                <Space h="lg" />
+                <Flex
+                  gap="md"
+                  justify="flex-start"
+                  align="center"
+                  direction="row"
+                  wrap="nowrap"
+                >
+                  <NumberInput
+                    radius="xl"
+                    size="md"
+                    hideControls
+                    w="25%"
+                  />
+                  <Text fz="lg" align="center" w="75%">
+                    Proficiency Bonus
+                  </Text>
+                </Flex>
+                <Space h="lg" />
+                <SavingThrows />
+              </Grid.Col>
+            </Grid>
           </Grid.Col>
           <Grid.Col span={3}>
+            <HitPointInfo/>
           </Grid.Col>
           <Grid.Col span={3}>
+            <PersonalityInfo />
           </Grid.Col>
         </Grid>
       </Container>
