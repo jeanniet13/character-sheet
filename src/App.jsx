@@ -40,6 +40,7 @@ function App() {
                   align="center"
                   direction="row"
                   wrap="nowrap"
+                  sx={{ outlineColor: 'black', outline: 'solid', padding: '5px' }}
                 >
                   <NumberInput
                     radius="xl"
@@ -47,7 +48,7 @@ function App() {
                     hideControls
                     w="25%"
                   />
-                  <Text fz="lg" align="center" w="75%">
+                  <Text fz="sm" align="center" w="75%">
                     Inspiration
                   </Text>
                 </Flex>
@@ -58,6 +59,7 @@ function App() {
                   align="center"
                   direction="row"
                   wrap="nowrap"
+                  sx={{ outlineColor: 'black', outline: 'solid', padding: '5px' }}
                 >
                   <NumberInput
                     radius="xl"
@@ -65,7 +67,7 @@ function App() {
                     hideControls
                     w="25%"
                   />
-                  <Text fz="lg" align="center" w="75%">
+                  <Text fz="sm" align="center" w="75%">
                     Proficiency Bonus
                   </Text>
                 </Flex>

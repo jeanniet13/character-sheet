@@ -25,9 +25,7 @@ export default function CharacterInfo() {
           <SimpleGrid
             cols={3}
             spacing="0.3rem" verticalSpacing="0.3rem"
-            styles={{
-              root: { outlineColor: 'black', outline: 'solid', padding: '5px' }
-            }}
+            sx={{ outlineColor: 'black', outline: 'solid', padding: '10px' }}
           >
             <div>
               <TextInput
